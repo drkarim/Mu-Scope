@@ -21,10 +21,10 @@ The following template is taken from Boostrap portfolio template:
     
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../api/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/1-col-portfolio.css" rel="stylesheet">
+    <link href="../api/bootstrap/css/1-col-portfolio.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -111,7 +111,7 @@ The following template is taken from Boostrap portfolio template:
                             <h3><?php echo $specimen['title']; ?></h3>
                             <h4><?php echo $specimen['subtitle']; ?></h4>
                             <p><?php echo $specimen['description']; ?></p>
-                            <a onclick="window.open(<?php echo "'../pages/load_dicom.php?folder=".$specimen_id."'"; ?>);window.open(<?php echo "'../stl/".$specimen_id."/'"; ?>);" class="btn btn-primary" href="#">Explore Specimen <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            <a onclick="window.open(<?php echo "'../pages/load_dicom.php?specimen_id=".$specimen_id."'"; ?>);window.open(<?php echo "'../stl/".$specimen_id."/'"; ?>);" class="btn btn-primary" href="#">Explore Specimen <span class="glyphicon glyphicon-chevron-right"></span></a>
                         </div>
                     </div>
                     <hr>
@@ -159,10 +159,10 @@ The following template is taken from Boostrap portfolio template:
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../api/jquery/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../api/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 

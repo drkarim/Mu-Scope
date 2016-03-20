@@ -2,7 +2,13 @@
 <html>
 
 <head>
-<title>Life sciences DICOM</title>
+<?php 
+	    include_once("../api/kcl/ServerLogs.php");
+		include_once("../api/kcl/XMLConfig.php");
+
+
+?>
+<title></title>
 <meta charset="UTF-8">
 <meta name="description" content="DICOM Web Viewer (DWV) simple version">
 <meta name="keywords" content="DICOM,HTML5,JavaScript,medical,imaging,DWV">
@@ -79,6 +85,18 @@
 <script type="text/javascript" src="appgui.js"></script>
 <!-- <script type="text/javascript" src="applauncher.js"></script> --> 
 </head>
+<?php 
+	
+	$xml_config = new XMLConfig('../xml/museum.xml');
+
+	
+	// Extract dicom   
+	$specimen_id = $_GET['specimen_id']; 	   // under ../dicom 
+	
+
+	$description = $xml_config->GetSpecimenData($specimen_id, "description");
+
+?> 
 
 <body>
 
@@ -97,20 +115,16 @@
 <!-- Layer Container -->
 <div class="layerContainer">
 <canvas class="imageLayer">Only for HTML5 compatible browsers...</canvas>
+
 </div><!-- /layerContainer -->
+
+<div id="specimen_description"><?php echo $description; ?></div>
 
 </div><!-- /dwv -->
 
 </div><!-- /content -->
 
 </div><!-- /page -->
-
-<?php 
-	
-	// Extract dicom   
-	$dicom_folder = $_GET['folder']; 	   // under ../dicom 
-
-?> 
 
 <script>
 	/**
@@ -135,7 +149,7 @@
 	    });
 	    dwv.gui.appendResetHtml(myapp);
 
-	    var dicom_folder = <?php echo "'".$dicom_folder."'" ?>; 
+	    var dicom_folder = <?php echo "'".$specimen_id."'" ?>; 
 	    var dicom_file_list = [];
 
 	  	$.get("read_dicom_images.php?folder="+dicom_folder, function(data, status){

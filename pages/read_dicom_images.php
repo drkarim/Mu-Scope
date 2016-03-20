@@ -1,6 +1,7 @@
 <?php 
 	
-	
+	$MAX_SLICES = 20;  	// set to -1 if seeking to display all slices 
+
 	// Function for finding entries with filenames: . and .. and .DS_Store files in the folder 
 	function startsWith($haystack, $needle) {
 	    // search backwards starting from haystack length characters from the end
@@ -16,7 +17,7 @@
 
 	$dicom_folder_root = "../dicom/";
 	$file_list_json = json_encode(array());
-	$slices_max = 200; 		// set to -1 if seeking to display all slices 
+	$slices_max = $MAX_SLICES; 	
 
 	if (isset($_GET['folder'])) {
 		
