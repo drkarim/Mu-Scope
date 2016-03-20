@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!-- 
+	Author: Rashed Karim 
+	Created: March 19, 2016 
+	Last Updated:  March 19, 2016 
+
+	The filename should not be changed as it is hard-coded in the following places: 
+	1. index.php
+
+	Notes:
+	======
+	1. Every specimen must have a <title>, <subtitle> and a <description>, this is a bare minimum 
+	2. All images should be 300 pixels in height and 700 pixels in width
+	3. In description, only text accepted, hyper-links will not work 
+	4. More specimen groups can be added to this XML, however, there is no real functionality in the php to handle multiple groups yet (as of March 2016)
+
+-->
+<museum> 
+	<specimens name="vertebrates" id="7ab25b486b0a4219813b71912f081077">
+		
+		<specimen name="hedgehog" id="9a46016fc7074e609b83421bdcc6c865">
+			
+			<!-- title and subtitle are a bare minimum  -->
+			<title>Hedgehog</title> 
+			<subtitle>Here is a subtitle</subtitle> 
+			
+			<!-- In description, only text accepted, hyper-links will not work  -->
+			<description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate eveniet unde.</description>
+
+			<!-- Leave URLs empty if there are no URL to be put -->
+			<image height="300" width="700">
+				<url></url>
+			</image>
+
+			<dicom_description></dicom_description>
+			<stl_description></stl_description>
+		</specimen>
+
+		<specimen name="triceratops" id="6546016fcghy4e61233421bdcc6c865">
+			<!-- title and subtitle are a bare minimum  -->
+			<title>Triceratops</title> 
+			<subtitle>Here is a subtitle</subtitle> 
+			
+			<!-- In description, only text accepted, hyper-links will not work  -->
+			<description>Triceratops is a genus of herbivorous ceratopsid dinosaur that first appeared during the late Maastrichtian stage of the late Cretaceous period, about 68 million years ago in what is now North America.</description>
+
+			<!-- Leave URLs empty if there are no URL to be put -->
+			<image height="300" width="700">
+				<url></url>
+			</image>
+		</specimen>
+
+		<specimen name="velociraptor" id="x3365fc7074e609b83jkfderc6c865">
+			<!-- Exactly as it appears in app's contentful Index XML, case-sensitive -->
+			<title>Velociraptor</title> 
+			<subtitle>Here is a subtitle</subtitle> 
+			
+			<!-- In description, only text accepted, hyper-links will not work  -->
+			<description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</description>
+
+			<!-- Leave URLs empty if there are no URL to be put -->
+			<image height="300" width="700">
+				<url></url>
+			</image>
+		</specimen>
+
+
+	</specimens>
+</museum> 
