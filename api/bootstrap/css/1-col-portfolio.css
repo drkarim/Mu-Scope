@@ -11,3 +11,11 @@ body {
 footer {
     margin: 50px 0;
 }
+
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+nav {
+  background: #F23B3E;
+}

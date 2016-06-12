@@ -1,11 +1,11 @@
-<!-- 
+<!--
 
-Rashed Karim KCL 2016   
+Rashed Karim KCL 2016
 
-The following template is taken from Boostrap portfolio template: 
+The following template is taken from Boostrap portfolio template:
 1 Col Portfolio - Start Bootstrap Template
 
---> 
+-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@ The following template is taken from Boostrap portfolio template:
     <meta name="description" content="">
     <meta name="author" content="">
 
-    
+
 
     <!-- Bootstrap Core CSS -->
     <link href="../api/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,18 +33,61 @@ The following template is taken from Boostrap portfolio template:
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+
+    <style>
+
+    a {
+      -webkit-transition:  .3s ease-in-out;
+      -moz-transition:  .3s ease-in-out;
+      transition:  .3s ease-in-out;
+    }
+
+    body {
+        background:#F8F8F8;
+    }
+
+    .btn {
+      background: #F23B3E;
+      border: none;
+    }
+
+    .btn:hover {
+      background: #c8282b;
+      border: none;
+    }
+
+    .navbar {
+      background: #F23B3E;
+      border-bottom: none;
+    }
+
+    .nav.navbar-nav li a {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .nav.navbar-nav li a:hover,
+    .nav.navbar-nav li a:active {
+        opacity: white;
+    }
+
+
+
+    </style>
 </head>
-<?php 
-    
+<?php
+
     include_once("../api/kcl/ServerLogs.php");
     include_once("../api/kcl/XMLConfig.php");
 
-    // Read the XML config file 
+    // Read the XML config file
     $SPECIMEN = 'vertebrates';
     $xml_config = new XMLConfig('../xml/museum.xml');
     $specimen_data = $xml_config->GetSpecimenDataDigest($SPECIMEN);
-    
-    
+
+
 
 ?>
 
@@ -61,16 +104,19 @@ The following template is taken from Boostrap portfolio template:
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Museum project</a>
+                <a class="navbar-brand" style="color:white;text-transform:uppercase;" href="#">Museum of Life Sciences</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#">collections</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#">what's on</a>
+                    </li>
+                    <li>
+                        <a href="#">about</a>
                     </li>
                 </ul>
             </div>
@@ -80,7 +126,7 @@ The following template is taken from Boostrap portfolio template:
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+    <div style="background:#F8F8F8;border-radius:8px;" class="container">
 
         <!-- Page Heading -->
         <div class="row">
@@ -92,7 +138,7 @@ The following template is taken from Boostrap portfolio template:
         </div>
         <!-- /.row -->
 
-        <?php 
+        <?php
 
             /*
             *   Each specimen loaded from config XML
@@ -115,12 +161,12 @@ The following template is taken from Boostrap portfolio template:
                         </div>
                     </div>
                     <hr>
-                <?php 
+                <?php
 
-            }       // end php foreach 
+            }       // end php foreach
         ?>
 
-      
+
 
         <hr>
 
@@ -134,7 +180,7 @@ The following template is taken from Boostrap portfolio template:
                     <li class="active">
                         <a href="#">1</a>
                     </li>
-                    
+
                     <li>
                         <a href="#">&raquo;</a>
                     </li>
@@ -149,7 +195,7 @@ The following template is taken from Boostrap portfolio template:
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Rashed Karim and Kawal Rhode 2016</p>
+                    <p>Copyright 2016 &copy; Rashed Karim and Kawal Rhode</p>
                 </div>
             </div>
             <!-- /.row -->
