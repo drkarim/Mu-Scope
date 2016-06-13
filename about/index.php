@@ -35,6 +35,7 @@ The following template is taken from Boostrap portfolio template:
 
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic' rel='stylesheet' type='text/css'>
 
 
     <style>
@@ -125,7 +126,7 @@ The following template is taken from Boostrap portfolio template:
           <li><strong>Promotion</strong>: production of literature, internet-based information and other materials</li>
           <li><strong>Teaching and training</strong>: purchase of equipment, materials and development of teaching aids</li>
           </ul>
-          A small band of volunteers, including present and former students as well as former staff, currently provides invaluable help. Each volunteer comes as their commitments allow. We try to match them with their interests and experience and to give them the opportunity to acquire new skills.</p>
+          <p>A small band of volunteers, including present and former students as well as former staff, currently provides invaluable help. Each volunteer comes as their commitments allow. We try to match them with their interests and experience and to give them the opportunity to acquire new skills.</p>
 
           <br>
 

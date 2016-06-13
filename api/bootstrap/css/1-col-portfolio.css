@@ -10,6 +10,12 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
+p, ul {
+  font-family: 'Crimson Text', serif;
+  font-size:18px;
+  color:rgba(0, 0, 0, 0.7);
+}
+
 footer {
     margin: 50px 0;
 }
@@ -74,7 +80,7 @@ a {
   border: 1px solid #d13538;
 }
 
-footer {
+footer p{
   color: rgba(0, 0, 0, 0.2);
-  font-size:10px;
+  font-size:12px;
 }

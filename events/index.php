@@ -35,6 +35,7 @@ The following template is taken from Boostrap portfolio template:
 
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic' rel='stylesheet' type='text/css'>
 
 
     <style>
@@ -107,7 +108,7 @@ The following template is taken from Boostrap portfolio template:
         </div>
         <!-- /.row -->
 
-      
+
 
 
         <!-- Pagination -->

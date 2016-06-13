@@ -35,6 +35,7 @@ The following template is taken from Boostrap portfolio template:
 
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic' rel='stylesheet' type='text/css'>
 
 
     <style>
@@ -100,9 +101,9 @@ The following template is taken from Boostrap portfolio template:
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Specimens
-                    <small><?php echo ucwords($SPECIMEN); ?></small>
-                </h1>
+              <h1 class="page-header">Zoological Collection
+                  <small><small><?php echo ucwords($SPECIMEN); ?></small></small>
+              </h1>
             </div>
         </div>
         <!-- /.row -->
