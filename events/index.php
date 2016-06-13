@@ -79,10 +79,10 @@ The following template is taken from Boostrap portfolio template:
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a style="color:#fff;" href="#">collections</a>
+                        <a href="../landing_page">collections</a>
                     </li>
                     <li>
-                        <a href="../events">what's on</a>
+                        <a style="color:#fff;" href="#">what's on</a>
                     </li>
                     <li>
                         <a href="../about">about</a>
@@ -100,43 +100,14 @@ The following template is taken from Boostrap portfolio template:
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Specimens
-                    <small><?php echo ucwords($SPECIMEN); ?></small>
+                <h1 class="page-header">What's On
+
                 </h1>
             </div>
         </div>
         <!-- /.row -->
 
-        <?php
-
-            /*
-            *   Each specimen loaded from config XML
-            */
-            foreach ($specimen_data as $specimen_id => $specimen)
-            {
-                ?>
-                    <!-- Project One/Two/Three and so on -->
-                    <div class="row">
-                        <div class="col-md-7">
-                            <a href="#">
-                                <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-                            </a>
-                        </div>
-                        <div class="col-md-5">
-                            <h3><?php echo $specimen['title']; ?></h3>
-                            <h4><?php echo $specimen['subtitle']; ?></h4>
-                            <p><?php echo $specimen['description']; ?></p>
-                            <a onclick="window.open(<?php echo "'../pages/load_dicom.php?specimen_id=".$specimen_id."'"; ?>);window.open(<?php echo "'../stl/".$specimen_id."/'"; ?>);" class="btn btn-primary" href="#">Explore Specimen <span class="glyphicon glyphicon-chevron-right"></span></a>
-                        </div>
-                    </div>
-                    <hr>
-                <?php
-
-            }       // end php foreach
-        ?>
-
-
-
+      
 
 
         <!-- Pagination -->

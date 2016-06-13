@@ -6,16 +6,75 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background:#F8F8F8;
+    font-family: 'Playfair Display', serif;
 }
 
 footer {
     margin: 50px 0;
 }
 
-body {
-  font-family: 'Playfair Display', serif;
+a {
+  -webkit-transition:  .3s ease-in-out;
+  -moz-transition:  .3s ease-in-out;
+  transition:  .3s ease-in-out;
 }
 
-nav {
+
+.btn {
   background: #F23B3E;
+  border: none;
+}
+
+.btn:hover {
+  background: #d13538;
+}
+
+.navbar {
+  background: #F23B3E;
+  border-bottom: none;
+}
+
+.nav.navbar-nav li a {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.nav.navbar-nav li a:hover,
+.nav.navbar-nav li a:active {
+    opacity: white;
+}
+
+.navbar-toggle {
+  border:none;
+}
+
+
+.pagination>li>a,
+.pagination>li>span {
+  border: 1px solid #F23B3E;
+  background: #F23B3E;
+  color: #F8F8F8;
+}
+
+.pagination>li>a:hover,
+.pagination>li>span:hover {
+  border: 1px solid #d13538;
+  background: #d13538;
+  color: #F8F8F8;
+}
+
+.pagination>li.active>a {
+  background: #d13538;
+  color: #fff;
+  border: 1px solid #d13538;
+}
+
+.pagination>li.active>a:hover {
+  background: #d13538;
+  border: 1px solid #d13538;
+}
+
+footer {
+  color: rgba(0, 0, 0, 0.2);
+  font-size:10px;
 }
