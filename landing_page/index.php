@@ -127,7 +127,8 @@ The following template is taken from Boostrap portfolio template:
                             <h3><?php echo $specimen['title']; ?></h3>
                             <h4><?php echo $specimen['subtitle']; ?></h4>
                             <p><?php echo $specimen['description']; ?></p>
-                            <a onclick="window.open(<?php echo "'../pages/load_dicom.php?specimen_id=".$specimen_id."'"; ?>);window.open(<?php echo "'../stl/".$specimen_id."/'"; ?>);" class="btn btn-primary" href="#">Explore Specimen <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            <a class="btn btn-primary" href="../specimen/specimen.php">Explore Specimen <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            <!-- <a onclick="window.open(<?php echo "'../pages/load_dicom.php?specimen_id=".$specimen_id."'"; ?>);window.open(<?php echo "'../stl/".$specimen_id."/'"; ?>);" class="btn btn-primary" href="#">Explore Specimen <span class="glyphicon glyphicon-chevron-right"></span></a> -->
                         </div>
                     </div>
                     <hr>
@@ -161,11 +162,10 @@ The following template is taken from Boostrap portfolio template:
 
         <hr>
 
-        <!-- Footer -->
         <footer>
             <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; 2016 Rashed Karim and Kawal Rhode. All Rights Reserved.</p>
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; 2016 Rashed Karim, Kawal Rhode and Tobias Whetton. All Rights Reserved.</p>
                 </div>
             </div>
             <!-- /.row -->

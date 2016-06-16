@@ -134,12 +134,12 @@ The following template is taken from Boostrap portfolio template:
 
         <!-- Footer -->
         <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; 2016 Rashed Karim and Kawal Rhode. All Rights Reserved.</p>
-                </div>
-            </div>
-            <!-- /.row -->
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <p>Copyright &copy; 2016 Rashed Karim, Kawal Rhode and Tobias Whetton. All Rights Reserved.</p>
+              </div>
+          </div>
+          <!-- /.row -->
         </footer>
 
     </div>
