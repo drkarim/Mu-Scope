@@ -1,7 +1,7 @@
 # Mu-Scope
 Web framework for listing DICOMs that uses the DWV web dicom viewer
 
-##### MOST RECENT UPDATE <small>Specimen Page written</small>
+##### MOST RECENT UPDATE <small>[specimen page written]</small>
 <small>
 
 - Created fundamental structure of the specimen page, containing the following information about the specimen in order: the name, latin name, a photograph taken from museum, introductory description, 3D (STL) View, 3D surface markings of interest (written as a paragraph beneath the viewer), Cross-sectional (DICOM) View, Cross-sectional points of interest (written as a paragraph beneath the viewer). [Note all of the information in this case has been directly applied to the .php file and will be taken from an updated .xml file in the next commit]
