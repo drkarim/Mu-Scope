@@ -140,6 +140,8 @@
                 {
                     $data = "".$specimen_node->description; 
                 }
+
+                // Note: add more lines here if you add extra specimen tags 
                 
             }
 
@@ -208,6 +210,19 @@
 	    	return $specimen_id; 
     	}
 
+        //!
+        /*!
+        *   Get a specimen's name 
+        */
+        public function GetSpecimenName($specimen_id)
+        {
+            $specimen_node = $this->GetSpecimenNodeFromID($specimen_id); 
+
+            $attrib = $specimen_node->attributes(); 
+            return $attrib["name"];
+            
+        }
+
         /*
         *   Get a digest of the specimen data 
         */
@@ -227,6 +242,12 @@
                     $data["subtitle"] = $this->GetSpecimenData($specimen_id, "subtitle");
                     $data["description"] = $this->GetSpecimenData($specimen_id, "description");
                     $data["image"] = $this->GetSpecimenURL($specimen_id);
+                    
+                    // Note: add more lines here if you add extra specimen tags 
+
+                    // name and id attribute of each specimen 
+                    $data['specimen_name'] = "".$this->GetSpecimenName($specimen_id);  
+                    $data['specimen_id'] =$specimen_id;
 
                     $output[$specimen_id] = $data; 
                 }

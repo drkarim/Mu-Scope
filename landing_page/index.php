@@ -50,9 +50,9 @@ The following template is taken from Boostrap portfolio template:
     include_once("../api/kcl/XMLConfig.php");
 
     // Read the XML config file
-    $SPECIMEN = 'vertebrates';
+    $specimen_type = 'vertebrates';
     $xml_config = new XMLConfig('../xml/museum.xml');
-    $specimen_data = $xml_config->GetSpecimenDataDigest($SPECIMEN);
+    $specimen_data = $xml_config->GetSpecimenDataDigest($specimen_type);
 
 
 
@@ -102,7 +102,7 @@ The following template is taken from Boostrap portfolio template:
         <div class="row">
             <div class="col-lg-12">
               <h1 class="page-header">Zoological Collection
-                  <small><small><?php echo ucwords($SPECIMEN); ?></small></small>
+                  <small><small><?php echo ucwords($specimen_type); ?></small></small>
               </h1>
             </div>
         </div>
@@ -120,14 +120,29 @@ The following template is taken from Boostrap portfolio template:
                     <div class="row">
                         <div class="col-md-7">
                             <a href="#">
-                                <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+                                <?php 
+
+
+                                    if ($specimen['image'] == '')
+                                        $image_url = '../img/img_placeholder_700_300.png';
+                                    else 
+                                        $image_url = $specimen['image'];
+
+                                ?>
+                                <img class="img-responsive" src="<?php echo $image_url; ?>" alt="">
                             </a>
                         </div>
                         <div class="col-md-5">
                             <h3><?php echo $specimen['title']; ?></h3>
                             <h4><?php echo $specimen['subtitle']; ?></h4>
                             <p><?php echo $specimen['description']; ?></p>
-                            <a class="btn btn-primary" href="../specimen/specimen.php">Explore Specimen <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            <?php 
+                                    $specimen_name = $specimen['specimen_name']; 
+
+                                    // URL for each specimen button is constructed here
+                                    $url = '../specimen/specimen.php?specimen_type='.$specimen_type.'&specimen_name='.$specimen_name.'&specimen_id='.$specimen_id;
+                            ?>
+                            <a class="btn btn-primary" href=<?php echo $url; ?>>Explore Specimen <span class="glyphicon glyphicon-chevron-right"></span></a>
                             <!-- <a onclick="window.open(<?php echo "'../pages/load_dicom.php?specimen_id=".$specimen_id."'"; ?>);window.open(<?php echo "'../stl/".$specimen_id."/'"; ?>);" class="btn btn-primary" href="#">Explore Specimen <span class="glyphicon glyphicon-chevron-right"></span></a> -->
                         </div>
                     </div>
