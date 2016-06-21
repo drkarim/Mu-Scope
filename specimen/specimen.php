@@ -88,16 +88,17 @@ The following has been heavily modified from the Boostrap portfolio template:
     include_once("../api/kcl/XMLConfig.php");
 
     // Read the XML config file
-    
+
     $specimen_type = $_GET['specimen_type']; // vertebrates';
-    $specimen_name = $_GET['specimen_name'];      
-    $specimen_id = $_GET['specimen_id'];      
+    $specimen_name = $_GET['specimen_name'];
+    $specimen_id = $_GET['specimen_id'];
 
     $xml_config = new XMLConfig('../xml/museum.xml');
     $specimen_data = $xml_config->GetSpecimenDataDigest($specimen_type);
 
 
     $title = $specimen_data[$specimen_id]['title'];
+
 
 ?>
 
@@ -146,7 +147,7 @@ The following has been heavily modified from the Boostrap portfolio template:
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-              <h1 style="color:#F23B3E;" class="text-center"><?php echo $title; ?><p class="text-center">Erinaceus europaeus</p></h1>
+              <h1 style="color:#F23B3E;" class="text-center"><?php echo $title; ?><p class="text-center"><?php echo $specimen_data[$specimen_id]['subtitle']; ?></p></h1>
             </div>
         </div>
         <!-- /.row -->
@@ -160,14 +161,14 @@ The following has been heavily modified from the Boostrap portfolio template:
 
         <!-- Picture Taken from the Life Sciences Musuem -->
         <div class="text-center" style="align-items:middle;">
-          <img src="../img/hedgehog.jpg" style="width:550px; max-width: 100%; display: inline; margin-left: auto; margin-right: auto;">
-          <!-- <span class="badge">The Axial and Appendicular Skeleton</span> -->
+          <?php $image_url = $specimen_data[$specimen_id]['image']; ?>
+          <img src="<?php echo $image_url; ?>" style="width:550px; max-width: 100%; display: inline; margin-left: auto; margin-right: auto;">
         </div>
 
-        <!-- Description -->
+        <!-- Introductory Description -->
         <div class="row text-center">
           <div class="col-md-6 col-md-offset-3">
-            <hr><p><?php echo $specimen_data[$specimen_id]['description']; ?></p><hr>
+            <hr><p><?php echo $specimen_data[$specimen_id]['introduction']; ?></p><hr>
           </div>
         </div>
 
@@ -185,7 +186,7 @@ The following has been heavily modified from the Boostrap portfolio template:
         <!-- Stl-Text -->
         <div class="row text-center">
           <div class="col-md-6 col-md-offset-3">
-            <br><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            <br><p><?php echo $specimen_data[$specimen_id]['stl_description']; ?></p>
             <hr>
           </div>
         </div>
@@ -199,7 +200,7 @@ The following has been heavily modified from the Boostrap portfolio template:
         <!-- Dicom-Text -->
         <div class="row text-center">
           <div class="col-md-6 col-md-offset-3">
-            <br><p> Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            <br><p><?php echo $specimen_data[$specimen_id]['dicom_description']; ?></p>
           </div>
         </div>
 

@@ -120,24 +120,24 @@ The following template is taken from Boostrap portfolio template:
                     <div class="row">
                         <div class="col-md-7">
                             <a href="#">
-                                <?php 
+                                <?php
 
 
                                     if ($specimen['image'] == '')
                                         $image_url = '../img/img_placeholder_700_300.png';
-                                    else 
+                                    else
                                         $image_url = $specimen['image'];
 
                                 ?>
-                                <img class="img-responsive" src="<?php echo $image_url; ?>" alt="">
+                                <img class="img-responsive" src="<?php echo $image_url; ?>" alt="" style="max-width: 100%;">
                             </a>
                         </div>
                         <div class="col-md-5">
                             <h3><?php echo $specimen['title']; ?></h3>
                             <h4><?php echo $specimen['subtitle']; ?></h4>
-                            <p><?php echo $specimen['description']; ?></p>
-                            <?php 
-                                    $specimen_name = $specimen['specimen_name']; 
+                            <p><?php echo $specimen['introduction']; ?></p>
+                            <?php
+                                    $specimen_name = $specimen['specimen_name'];
 
                                     // URL for each specimen button is constructed here
                                     $url = '../specimen/specimen.php?specimen_type='.$specimen_type.'&specimen_name='.$specimen_name.'&specimen_id='.$specimen_id;
