@@ -1,7 +1,11 @@
 # Mu-Scope
 Web framework for listing DICOMs that uses the DWV web dicom viewer
 
+<<<<<<< Updated upstream
 ##### MOST RECENT UPDATE <small>[specimen page written]</small>
+=======
+##### MOST RECENT UPDATE <small>Specimen Page written</small>
+>>>>>>> Stashed changes
 <small>
 
 - Created fundamental structure of the specimen page, containing the following information about the specimen in order: the name, latin name, a photograph taken from museum, introductory description, 3D (STL) View, 3D surface markings of interest (written as a paragraph beneath the viewer), Cross-sectional (DICOM) View, Cross-sectional points of interest (written as a paragraph beneath the viewer). [Note all of the information in this case has been directly applied to the .php file and will be taken from an updated .xml file in the next commit]
@@ -25,7 +29,14 @@ Web framework for listing DICOMs that uses the DWV web dicom viewer
 
 ### Other things to do
 
+<<<<<<< Updated upstream
 - [x] **Write css template** to overlay the bootstrap theme. (Custom fonts, introduce some subtle colour etc).
+=======
+- [x] **Write custom css** to replace the bootstrap theme. (Custom fonts, introduce some subtle colour etc).
+- [x] **Create a specimen page template, so dicom, stl and information about the animal all appear together in unison**. Might be fun to assign a different colour to each specimen? Designing it like an A4 paper factsheet might work really well.
+- [ ] **Point specimen page template to xml file using php** so with every different specimen the information, dicom and stl are different but the format will always be the same.
+- [ ] **Get Dicom Viewer working inline on specimen page** as at the moment it is on a separate page.
+>>>>>>> Stashed changes
 - [ ] **Create a homepage** so there is a small introduction about the life sciences museum, and then five different divs for each collection (the Zoological Collection, Botanical Collection, Pharmaceutical Collection, Microscope Slide Collection, Craniofacial Skeletal Collection). The navbar at the top should include (HOME, COLLECTIONS, WHAT’S ON, ABOUT).
 - [ ] **Zoological collection page** or the current landing page, needs photos. Go to the Life Sciences musuem to take some pictures for use on the website.
 

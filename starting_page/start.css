@@ -1,0 +1,77 @@
+
+/* Musuem of Life Sciences 'Start' Page designed by Tobias Whetton */
+
+body {
+  /* Location of the image */
+  background-image: url(../img/start.jpg);
+
+  /* Image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Image doesn't repeat */
+  background-repeat: no-repeat;
+
+  /* Makes the image fixed in the viewport so that it doesn't move when
+     the content height is greater than the image height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based on its container's size */
+  background-size: cover;
+
+  /* Pick a solid background color that will be displayed while the background image is loading */
+  background-color:# #F8F8F8;
+}
+
+.btnl {
+  font-family: 'Crimson Text', serif;
+  font-weight: normal;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.2);
+  -webkit-transition:  .4s ease-in-out;
+  -moz-transition:  .4s ease-in-out;
+  transition:  .4s ease-in-out;
+  font-size: 18px;
+  border-radius:20px;
+  padding: 0 0 0 0;
+}
+
+.intbut .btnl:hover,
+.intbut .btnl:focus {
+  padding: 2px 8px 7px 8px;
+  text-decoration: none;
+}
+
+.intbut .btnl {
+  padding: 0px 3px 5px 3px;
+}
+
+
+.intbut .btnl:hover,
+.intbut .btnl:focus {
+  background: #F23B3E;
+  color: #F8F8F8;
+}
+
+.intbut .btnl {
+  background: rgba(0, 0, 0, 0);
+  color: #F23B3E;
+}
+
+#beforearrow {
+  display:none;
+}
+
+#afterarrow:hover > #beforearrow,
+#afterarrow:focus > #beforearrow {
+  display: inline;
+}
+
+
+/* For mobile devices */
+@media only screen and (max-width: 767px) {
+  body {
+    /* The file size of this background image is 93% smaller
+     * to improve page load speed on mobile internet connections */
+    background-image: url(../img/start.jpg);
+  }
+	}

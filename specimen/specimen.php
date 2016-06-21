@@ -70,7 +70,7 @@ The following has been heavily modified from the Boostrap portfolio template:
     }
 
     body {
-        background: :#F8F8F8;
+        background:#F8F8F8;
     }
 
     </style>
@@ -114,10 +114,10 @@ The following has been heavily modified from the Boostrap portfolio template:
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
+                <a class="navbar-brand page-scroll" href="../starting_page">
                     <img src="../img/KCL_logo.png" alt="KCL Logo" height="22">
                 </a>
-                <a class="navbar-brand" style="color:white;text-transform:uppercase;letter-spacing:0.03em;font-size:16px;" href="#">Museum <span style="font-size:12px;">of</span> Life Sciences</a>
+                <a class="navbar-brand" style="color:white;text-transform:uppercase;letter-spacing:0.03em;font-size:16px;" href="../starting_page">Museum <span style="font-size:12px;">of</span> Life Sciences</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
