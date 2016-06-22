@@ -71,16 +71,16 @@ The following template is taken from Boostrap portfolio template:
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="../starting_page">
+                <a class="navbar-brand page-scroll" href="../welcome">
                     <img src="../img/KCL_logo.png" alt="KCL Logo" height="22">
                 </a>
-                <a class="navbar-brand" style="color:white;text-transform:uppercase;letter-spacing:0.03em;font-size:16px;" href="../starting_page">Museum <span style="font-size:12px;">of</span> Life Sciences</a>
+                <a class="navbar-brand" style="color:white;text-transform:uppercase;letter-spacing:0.03em;font-size:16px;" href="../welcome">Museum <span style="font-size:12px;">of</span> Life Sciences</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="../landing_page">collections</a>
+                        <a href="../collections">collections</a>
                     </li>
                     <li>
                         <a style="color:#fff;" href="#">what's on</a>

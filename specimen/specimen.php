@@ -33,6 +33,7 @@ The following has been heavily modified from the Boostrap portfolio template:
     <![endif]-->
 
     <!-- Custom Fonts -->
+    <link href="../api/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic' rel='stylesheet' type='text/css'>
 
@@ -72,6 +73,18 @@ The following has been heavily modified from the Boostrap portfolio template:
     body {
         background:#F8F8F8;
     }
+
+
+        .intbut .btnl:hover,
+        .intbut .btnl:focus {
+          padding: 2px 7px 3px 7px;
+          text-decoration: none;
+        }
+
+        .intbut .btnl {
+          padding: 0px 3px 0px 3px;
+        }
+
 
     </style>
 
@@ -115,16 +128,16 @@ The following has been heavily modified from the Boostrap portfolio template:
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="../starting_page">
+                <a class="navbar-brand page-scroll" href="../welcome">
                     <img src="../img/KCL_logo.png" alt="KCL Logo" height="22">
                 </a>
-                <a class="navbar-brand" style="color:white;text-transform:uppercase;letter-spacing:0.03em;font-size:16px;" href="../starting_page">Museum <span style="font-size:12px;">of</span> Life Sciences</a>
+                <a class="navbar-brand" style="color:white;text-transform:uppercase;letter-spacing:0.03em;font-size:16px;" href="../welcome">Museum <span style="font-size:12px;">of</span> Life Sciences</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="../landing_page">collections</a>
+                        <a href="../collections">collections</a>
                     </li>
                     <li>
                         <a href="../events">what's on</a>
@@ -201,10 +214,13 @@ The following has been heavily modified from the Boostrap portfolio template:
         <div class="row text-center">
           <div class="col-md-6 col-md-offset-3">
             <br><p><?php echo $specimen_data[$specimen_id]['dicom_description']; ?></p>
+            <br>
+            <span class="intbut" style="display:inline; padding-bottom: 30px;"><a href="javascript:history.back()" id="afterarrow" style="font-size:18px;" class="btnl page-scroll"><f class="fa fa-arrow-circle-left"></f> <span style="font-size:20px;" id="beforearrow">&nbsp;return to collection&nbsp;</span></a></span>
           </div>
         </div>
 
         <hr>
+
         <!-- Footer -->
         <footer>
             <div class="row">

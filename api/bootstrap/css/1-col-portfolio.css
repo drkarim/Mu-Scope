@@ -52,6 +52,12 @@ a {
 
 .navbar-toggle {
   border:none;
+  background: none;
+}
+
+.navbar-toggle:hover {
+  border: none;
+  background: none;
 }
 
 
@@ -83,4 +89,48 @@ a {
 footer p{
   color: rgba(0, 0, 0, 0.2);
   font-size:12px;
+}
+
+.btnl {
+  font-family: 'Crimson Text', serif;
+  font-weight: normal;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.2);
+  -webkit-transition:  .4s ease-in-out;
+  -moz-transition:  .4s ease-in-out;
+  transition:  .4s ease-in-out;
+  font-size: 18px;
+  border-radius:20px;
+  padding: 0 0 0 0;
+}
+
+.intbut .btnl:hover,
+.intbut .btnl:focus {
+  padding: 2px 8px 7px 8px;
+  text-decoration: none;
+}
+
+.intbut .btnl {
+  padding: 0px 3px 5px 3px;
+}
+
+
+.intbut .btnl:hover,
+.intbut .btnl:focus {
+  background: #F23B3E;
+  color: #F8F8F8;
+}
+
+.intbut .btnl {
+  background: rgba(0, 0, 0, 0);
+  color: #F23B3E;
+}
+
+#beforearrow {
+  display:none;
+}
+
+#afterarrow:hover > #beforearrow,
+#afterarrow:focus > #beforearrow {
+  display: inline;
 }
