@@ -1,11 +1,11 @@
 # Mu-Scope
-**Museum-Scope** A web interface, to interact and learn about digitised specimens from the Museum of Life Sciences, using Unity Web Player and the open-source DWV viewer.
-<small>Copyright &copy; 2016 Rashed Karim, Kawal Rhode and Tobias Whetton. All Rights Reserved.</small>
+**Museum-Scope** <em>A web interface, to interact and learn about digitised specimens from the Museum of Life Sciences, using Unity Web Player and the open-source DWV viewer.</em>
+
 
 ##### LARGE UPDATE COMING SOON <small>[by 26 June at 23:59]</small>
 This update will include:
 - DICOM and Unity player working in unison on the /specimen.php page. However there has been trouble with linking the DICOM viewer to its associated specimen.
-- A polished navigation system for all of the different collections of the musuem. XML/PHP all work together to provide the informatio displayed.
+- A polished navigation system for all of the different collections of the musuem. XML/PHP all work together to provide the information displayed.
 - Addition of lots of temporary content to show off the new design's capabilities.
 - A unified CSS design across the whole website, removing the modern red navbar for a more classic 'paper-style' in keeping with the classic natural history feel.
 - Lots of small bugs squashed. The unity player now displays inline on mobile devices. The navbar now works with mobile devices and does not overflow. Issues with buttons not displaying properly have been fixed.
