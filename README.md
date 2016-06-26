@@ -2,13 +2,18 @@
 **Museum-Scope** <em>A web interface, to interact and learn about digitised specimens from the Museum of Life Sciences, using Unity Web Player and the open-source DWV viewer.</em>
 
 
-##### LARGE UPDATE COMING SOON <small>[by 26 June at 23:59]</small>
-This update will include:
-- DICOM and Unity player working in unison on the /specimen.php page. However there has been trouble with linking the DICOM viewer to its associated specimen.
-- A polished navigation system for all of the different collections of the musuem. XML/PHP all work together to provide the information displayed.
-- Addition of lots of temporary content to show off the new design's capabilities.
-- A unified CSS design across the whole website, removing the modern red navbar for a more classic 'paper-style' in keeping with the classic natural history feel.
-- Lots of small bugs squashed. The unity player now displays inline on mobile devices. The navbar now works with mobile devices and does not overflow. Issues with buttons not displaying properly have been fixed.
+##### THE **BIG RED** UPDATE <small>[Release 1.0]</small>
+This update includes:
+
+- **Overhaul of the whole CSS design of the website.** It treads a fine line between contemporary web design and the classic look and feel of the museum. King’s red is used throughout. The red navbar has been refreshed in favour of a sepia/paper look.
+- **Restructured the xml/php,** ‘vertebrates’ have been renamed to ‘zoological’. ’specimens’ have been renamed to ‘collection’ to avoid confusion with the other specimen subvariable. And other small performance tweaks.
+- **Welcome page has been brightened up.** Sizes rearranged so it works on tablets and mobile devices. 
+- What’s On page now has custom social buttons.
+- **The Collections page navigation system is now in a polished state**, php and xml working together in unison. Six animated collections to choose from. Opening a collection initiates a loss of focus, and previews pop up. The previews have symbols in the right-hand corner indicating whether they contain either/or a dicom/stl viewer. These symbols are flexible and use php to pull the information from the xml file.
+- **Both the dicom/stl viewers are now integrated into the specimen page** however the dicom requires manual loading of the files. The dicom/stl symbols are present as well.
+- **Lots of small bugs squashed**. The unity player now displays inline on mobile devices. The navbar is now mobile friendly and no longer overflows.
+
+
 
 ## ROADMAP 
 
@@ -32,9 +37,12 @@ This update will include:
 - [x] **img placeholder** needs to be replaced with xml file image. At current, an img folder has been created to serve as a place for the jpg files. 
 - [ ] **Dicom and Stl viewer do not change model with different specimen**, at the moment the Dicom Viewer is stuck on the hedgehog skull.
 - [ ] **fullscreen unity player** - the button fails to work and has been commented out at the moment.
+- [ ] **PHP/XML has issues** with finding new specimens.
+- [ ] **navbar-toggle** stuck on white on mobile devices
+
 
 ### New Ideas and Suggestions
 
 - **[Sketchfab](https://sketchfab.com/models/209bffe6866042379a704ce46bb6e632)** - example from the natural history museum in Oxford. Same thing as what we are doing however will be harder to implement it all automatically. Quality is very good though, useful for ideas. Has google cardboard support which could be interesting.
-- **MuseumofLifeSciences.com** is available
-- **000Webhost.com can be used to run the website for free** however there are drawbacks. It will not pull from the github repository, and the space is limited, but may be good for a demo.
+- **[MuseumofLifeSciences.com](MuseumofLifeSciences.com)** is available
+- **[000Webhost](000Webhost.com) can be used to run the website for free** however there are drawbacks. It will not pull from the github repository, and the space is limited, but may be good for a demo.
