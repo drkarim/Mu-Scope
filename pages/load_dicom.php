@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<?php 
+<?php
 	    include_once("../api/kcl/ServerLogs.php");
 		include_once("../api/kcl/XMLConfig.php");
 
@@ -83,20 +83,20 @@
 
 <!-- Launch the app -->
 <script type="text/javascript" src="appgui.js"></script>
-<!-- <script type="text/javascript" src="applauncher.js"></script> --> 
+<!-- <script type="text/javascript" src="applauncher.js"></script> -->
 </head>
-<?php 
-	
+<?php
+
 	$xml_config = new XMLConfig('../xml/museum.xml');
 
-	
-	// Extract dicom   
-	$specimen_id = $_GET['specimen_id']; 	   // under ../dicom 
-	
 
-	$description = $xml_config->GetSpecimenData($specimen_id, "description");
+	// Extract dicom
+	$specimen_id = $_GET['specimen_id']; 	   // under ../dicom
 
-?> 
+
+	$introduction = $xml_config->GetSpecimenData($specimen_id, "introduction");
+
+?>
 
 <body>
 
@@ -118,7 +118,7 @@
 
 </div><!-- /layerContainer -->
 
-<div id="specimen_description"><?php echo $description; ?></div>
+<div id="specimen_introduction"><?php echo $introduction; ?></div>
 
 </div><!-- /dwv -->
 
@@ -149,15 +149,15 @@
 	    });
 	    dwv.gui.appendResetHtml(myapp);
 
-	    var dicom_folder = <?php echo "'".$specimen_id."'" ?>; 
+	    var dicom_folder = <?php echo "'".$specimen_id."'" ?>;
 	    var dicom_file_list = [];
 
 	  	$.get("read_dicom_images.php?folder="+dicom_folder, function(data, status){
-        		
-        		/*data = ["../dicom/hedgehog/1.3.6.1.4.1.12842.1.1.14.2.20160129.173014.188.2644821263", 
-	    				"../dicom/hedgehog/1.3.6.1.4.1.12842.1.1.14.2.20160129.173014.188.4132043441", 
+
+        		/*data = ["../dicom/hedgehog/1.3.6.1.4.1.12842.1.1.14.2.20160129.173014.188.2644821263",
+	    				"../dicom/hedgehog/1.3.6.1.4.1.12842.1.1.14.2.20160129.173014.188.4132043441",
 	    				"../dicom/hedgehog/1.3.6.1.4.1.12842.1.1.14.2.20160129.173014.189.1273933236"];		*/
-        		dicom_file_list = data; 		
+        		dicom_file_list = data;
         		/*
         			$.each(data, function(i, dicom_file) {
         				dicom_file_list = dicom_file
@@ -167,11 +167,11 @@
         		myapp.loadURLs(dicom_file_list);
 
     	});
-	    
-	    /*myapp.loadURLs(["../dicom/hedgehog/1.3.6.1.4.1.12842.1.1.14.2.20160129.173014.188.2644821263", 
-	    				"../dicom/hedgehog/1.3.6.1.4.1.12842.1.1.14.2.20160129.173014.188.4132043441", 
+
+	    /*myapp.loadURLs(["../dicom/hedgehog/1.3.6.1.4.1.12842.1.1.14.2.20160129.173014.188.2644821263",
+	    				"../dicom/hedgehog/1.3.6.1.4.1.12842.1.1.14.2.20160129.173014.188.4132043441",
 	    				"../dicom/hedgehog/1.3.6.1.4.1.12842.1.1.14.2.20160129.173014.189.1273933236"]);*/
-	    
+
 	});
 </script>
 

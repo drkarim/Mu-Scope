@@ -51,7 +51,7 @@
     	{
     		$specimen_node = NULL;
 
-    		foreach ($this->xml_obj->specimens->specimen as $specimen)
+    		foreach ($this->xml_obj->collection->specimen as $specimen)
     		{
 
     			$attrib = $specimen->attributes();
@@ -77,13 +77,13 @@
         {
             $specimen_node = NULL;
 
-            foreach ($this->xml_obj->specimens as $specimens)
+            foreach ($this->xml_obj->collection as $collection)
             {
-                $attrib = $specimens->attributes();
+                $attrib = $collection->attributes();
 
                 if ($attrib["name"] == $specimen_group_name)
                 {
-                    $specimen_node = $specimens;
+                    $specimen_node = $collection;
                     break;
                 }
             }
@@ -94,16 +94,16 @@
         /*!
         *   Returns an array of specimen ids
         */
-        private function GetSpecimens($specimen_group_name)
+        private function Getcollection($specimen_group_name)
         {
             $specimen_ids = array();
 
             $specimen_group = $this->GetSpecimenGroupNode($specimen_group_name);
 
             if ($specimen_group != NULL) {
-                foreach ($specimen_group->specimen as $specimens)
+                foreach ($specimen_group->specimen as $collection)
                 {
-                    $attrib = $specimens->attributes();
+                    $attrib = $collection->attributes();
 
                     array_push($specimen_ids, "".$attrib['id']);
                 }
@@ -178,13 +178,13 @@
 
 
 
-    	//! Returns the number of specimens
+    	//! Returns the number of collection
     	/*!
-    	*	Returns the total number of specimens
+    	*	Returns the total number of collection
     	*/
     	public function GetSpecimenCount()
     	{
-    		return count($this->xml_obj->specimens->specimen);
+    		return count($this->xml_obj->collection->specimen);
     	}
 
 
@@ -239,7 +239,7 @@
             $specimen_ids = array();
             $output = array();
 
-            $specimen_ids = $this->GetSpecimens($specimen_group_name);
+            $specimen_ids = $this->Getcollection($specimen_group_name);
 
             if (count($specimen_ids) > 0)
             {

@@ -6,7 +6,7 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    background:#F8F8F8;
+    background: #fbf8f2;
     font-family: 'Playfair Display', serif;
 }
 
@@ -37,27 +37,29 @@ a {
 }
 
 .navbar {
-  background: #F23B3E;
+  background: #fbf8f2;
   border-bottom: none;
 }
 
 .nav.navbar-nav li a {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .nav.navbar-nav li a:hover,
 .nav.navbar-nav li a:active {
-    opacity: white;
+    color: rgba(0, 0, 0, 0.7);
 }
 
-.navbar-toggle {
+.navbar .navbar-header .navbar-toggle {
   border:none;
   background: none;
+  color:rgba(0, 0, 0, 0.5);
+  padding: 10px 0px 10px 5px;
 }
 
-.navbar-toggle:hover {
-  border: none;
-  background: none;
+.navbar .navbar-header .navbar-toggle:hover,
+.navbar .navbar-header .navbar-toggle:active {
+  color:rgba(0, 0, 0, 0.7);
 }
 
 
@@ -133,4 +135,32 @@ footer p{
 #afterarrow:hover > #beforearrow,
 #afterarrow:focus > #beforearrow {
   display: inline;
+}
+
+section {
+    padding: 100px 0;
+}
+
+section h2 {
+    margin: 0;
+    font-size: 3em;
+}
+
+#mls {
+  font-size:16px;
+}
+
+#of {
+  font-size:12px;
+}
+
+@media only screen and (max-width: 767px) {
+  #mls {
+    font-size:14px;
+  }
+
+  #of {
+    font-size:10px;
+  }
+
 }

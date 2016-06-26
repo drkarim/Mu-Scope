@@ -42,10 +42,7 @@ The following has been heavily modified from the Boostrap portfolio template:
 
     .navbar {
       border-bottom: none;
-      -webkit-backdrop-filter: blur(12px);
-      -moz-backdrop-filter: blur(12px);
-      -backdrop-filter: blur(12px);
-      background: rgba(0, 0, 0, 0.05);
+      background: rgba(251, 248, 242, 0.3);
       -webkit-transition:  .3s ease-in-out;
       -moz-transition:  .3s ease-in-out;
       transition:  .3s ease-in-out;
@@ -53,7 +50,7 @@ The following has been heavily modified from the Boostrap portfolio template:
     }
 
     .navbar .container {
-      opacity: 0.4;
+      opacity: 0.2;
       -webkit-transition:  .3s ease-in-out;
       -moz-transition:  .3s ease-in-out;
       transition:  .3s ease-in-out;
@@ -64,15 +61,12 @@ The following has been heavily modified from the Boostrap portfolio template:
     }
 
     .navbar:hover {
-      background: #F23B3E;
+      background: #fbf8f2;
       -webkit-transition:  .3s ease-in-out;
       -moz-transition:  .3s ease-in-out;
       transition:  .3s ease-in-out;
     }
 
-    body {
-        background:#F8F8F8;
-    }
 
 
         .intbut .btnl:hover,
@@ -102,7 +96,7 @@ The following has been heavily modified from the Boostrap portfolio template:
 
     // Read the XML config file
 
-    $specimen_type = $_GET['specimen_type']; // vertebrates';
+    $specimen_type = $_GET['specimen_type']; // zoological';
     $specimen_name = $_GET['specimen_name'];
     $specimen_id = $_GET['specimen_id'];
 
@@ -129,9 +123,9 @@ The following has been heavily modified from the Boostrap portfolio template:
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="../welcome">
-                    <img src="../img/KCL_logo.png" alt="KCL Logo" height="22">
+                    <img src="../img/KCL_logo.png" alt="KCL Logo" height="22" style="filter: invert(60%);">
                 </a>
-                <a class="navbar-brand" style="color:white;text-transform:uppercase;letter-spacing:0.03em;font-size:16px;" href="../welcome">Museum <span style="font-size:12px;">of</span> Life Sciences</a>
+                <a class="navbar-brand" id="mls" style="color:rgba(0, 0, 0, 0.7);text-transform:uppercase;letter-spacing:0.03em;" href="../welcome">Museum <span id="of">of</span> Life Sciences</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -155,7 +149,8 @@ The following has been heavily modified from the Boostrap portfolio template:
 
 
     <!-- Page Content -->
-    <div style="background:#F8F8F8;" class="container specimen-div">
+    <section>
+    <div class="container specimen-div">
 
         <!-- Page Heading -->
         <div class="row">
@@ -187,9 +182,9 @@ The following has been heavily modified from the Boostrap portfolio template:
 
 
         <!-- Stl Viewer -->
-        <h3 class="text-center">Three Dimensional View</h3><br>
+        <h3 class="text-center"><i style="color:rgba(0, 0, 0, 0.2);" class="fa fa-dot-circle-o"></i><br><br>Three Dimensional View</h3><br>
         <div class="text-center clear">
-          <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="400px" width="550px"></canvas>
+          <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" style="max-width:100%" height="400px" width="550px"></canvas>
           <br>
           <!-- Fullscreen fails to work and logo removed is cleaner -->
           <!-- <div class="logo"></div> -->
@@ -205,9 +200,10 @@ The following has been heavily modified from the Boostrap portfolio template:
         </div>
 
         <!-- Dicom Viewer (not working so dummy image is present at the moment)-->
-        <h3 class="text-center">Cross-Sectional View</h3><br>
+        <h3 class="text-center"><i style="color:rgba(0, 0, 0, 0.2);" class="fa fa-plus-circle"></i><br><br>Cross-Sectional View</h3><br>
         <div class="text-center" style="align-items:middle;">
-          <img src="../img/dicom_dummy.jpg" style="width:550px; max-width: 100%; display: inline; margin-left: auto; margin-right: auto;">
+          <iframe src="../api/dwv/viewers/mobile/index.html" style="width:550px; height:400px; max-width: 100%; display: inline; margin-left: auto; margin-right: auto;"  allowfullscreen></iframe>
+          <!-- <img src="../img/dicom_dummy.jpg" style="width:550px; max-width: 100%; display: inline; margin-left: auto; margin-right: auto;"> -->
         </div>
 
         <!-- Dicom-Text -->
@@ -215,10 +211,10 @@ The following has been heavily modified from the Boostrap portfolio template:
           <div class="col-md-6 col-md-offset-3">
             <br><p><?php echo $specimen_data[$specimen_id]['dicom_description']; ?></p>
             <br>
-            <span class="intbut" style="display:inline; padding-bottom: 30px;"><a href="javascript:history.back()" id="afterarrow" style="font-size:18px;" class="btnl page-scroll"><f class="fa fa-arrow-circle-left"></f> <span style="font-size:20px;" id="beforearrow">&nbsp;return to collection&nbsp;</span></a></span>
+            <span class="intbut" style="display:inline; padding-bottom: 30px;"><a href="../collections" id="afterarrow" style="font-size:18px;" class="btnl page-scroll"><f class="fa fa-arrow-circle-left"></f> <span style="font-size:20px;" id="beforearrow">&nbsp;return to collection&nbsp;</span></a></span>
           </div>
         </div>
-
+      </section>
         <hr>
 
         <!-- Footer -->

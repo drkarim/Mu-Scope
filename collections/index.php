@@ -42,12 +42,7 @@ The following template is taken from Boostrap portfolio template:
     <style>
 
     body {
-      background: #E6E2D7;
-    }
-
-    .navbar {
-      background: #E6E2D7;
-      border-bottom: none;
+      background: #fbf8f2;
     }
 
     .nav.navbar-nav li a {
@@ -56,18 +51,11 @@ The following template is taken from Boostrap portfolio template:
 
     .nav.navbar-nav li a:hover,
     .nav.navbar-nav li a:active {
-        color: #F23B3E;
+        color: rgba(0, 0, 0, 0.7);
     }
 
 
-    section {
-        padding: 100px 0;
-    }
 
-    section h2 {
-        margin: 0;
-        font-size: 3em;
-    }
 
     section.success {
         color: #F8F8F8;
@@ -80,7 +68,7 @@ The following template is taken from Boostrap portfolio template:
     section.success a:active,
     section.success a.active {
         outline: 0;
-        color: #2c3e50;
+        color: #F23B3E;
     }
 
     @media(max-width:767px) {
@@ -101,6 +89,7 @@ The following template is taken from Boostrap portfolio template:
         -webkit-transition: all ease .5s;
         -moz-transition: all ease .5s;
         transition: all ease .5s;
+        border:none;
     }
 
     #portfolio .portfolio-item:hover {
@@ -108,11 +97,13 @@ The following template is taken from Boostrap portfolio template:
         -webkit-filter: grayscale(0%);
     }
 
+
     #portfolio .portfolio-item .portfolio-link {
         display: block;
         position: relative;
         margin: 0 auto;
         max-width: 400px;
+        outline:none !important;
     }
 
     #portfolio .portfolio-item .portfolio-link .caption {
@@ -123,6 +114,7 @@ The following template is taken from Boostrap portfolio template:
         -webkit-transition: all ease .5s;
         -moz-transition: all ease .5s;
         transition: all ease .5s;
+
     }
 
     #portfolio .portfolio-item .portfolio-link .caption:hover {
@@ -132,7 +124,7 @@ The following template is taken from Boostrap portfolio template:
 
     #portfolio .portfolio-item .portfolio-link .caption .caption-content {
         position: absolute;
-        top: 100%;
+        top: 90%;
         width: 100%;
         height: 20px;
         margin-top: -20px;
@@ -142,14 +134,24 @@ The following template is taken from Boostrap portfolio template:
 
     #portfolio .portfolio-item .portfolio-link .caption .caption-content i {
         margin-top: -12px;
-        font-size: 20px;
-        background: #F8F8F8;
-        color: rgba(0, 0, 0, 0.7);
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.8);
         text-transform: uppercase;
         font-style: normal;
-        padding: 2px 8px 4px 8px;
-        border-radius: 2px;
+        padding: 2px 10px 4px 10px;
+        border-radius: 20px;
+        -webkit-transition:  .3s ease-in-out;
+        -moz-transition:  .3s ease-in-out;
+        transition:  .3s ease-in-out;
+        background: rgba(230, 226, 215, 0.8);
+        font-family: 'Crimson Text', serif;
+    }
 
+    #portfolio .portfolio-item .portfolio-link .caption:hover .caption-content i {
+        background: rgba(242, 59, 62, 0.8);
+        color: #F8F8F8;
+        padding: 3px 15px 5px 15px;
+          -webkit-filter: blur(0px);
     }
 
     #portfolio .portfolio-item .portfolio-link .caption .caption-content h3,
@@ -171,9 +173,17 @@ The following template is taken from Boostrap portfolio template:
     .portfolio-modal .modal-content {
         padding: 100px 0;
         min-height: 100%;
-        border-radius: 15px;
         text-align: center;
-        background: #fbf8f2;
+        background: rgba(177, 175, 168, 0.5);
+        -webkit-backdrop-filter: blur(12px);
+        -moz-backdrop-filter: blur(12px);
+        -backdrop-filter: blur(12px);
+        background-clip: border-box;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border: 0;
+        border-radius: 0;
+
 
     }
 
@@ -209,7 +219,7 @@ The following template is taken from Boostrap portfolio template:
         width: 1px;
         height: 75px;
         margin-left: 35px;
-        background-color: #F23B3E;
+        background-color: #F8F8F8;
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         transform: rotate(45deg);
@@ -219,7 +229,7 @@ The following template is taken from Boostrap portfolio template:
         z-index: 1052;
         width: 1px;
         height: 75px;
-        background-color: #F23B3E;
+        background-color: #F8F8F8;
         -webkit-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
         transform: rotate(90deg);
@@ -234,10 +244,14 @@ The following template is taken from Boostrap portfolio template:
     .intbut .btnl:focus {
       padding: 2px 7px 3px 7px;
       text-decoration: none;
+      background: #F8F8F8;
+      color: grey;
     }
 
     .intbut .btnl {
       padding: 0px 3px 0px 3px;
+      background: rgba(0, 0, 0, 0);
+      color: #F8F8F8;
     }
 
     #polaroid {
@@ -251,21 +265,12 @@ The following template is taken from Boostrap portfolio template:
 
 
 
-
-
     </style>
 </head>
 <?php
 
     include_once("../api/kcl/ServerLogs.php");
     include_once("../api/kcl/XMLConfig.php");
-
-    // Read the XML config file
-    $specimen_type = 'vertebrates';
-    $xml_config = new XMLConfig('../xml/museum.xml');
-    $specimen_data = $xml_config->GetSpecimenDataDigest($specimen_type);
-
-
 
 ?>
 
@@ -285,7 +290,7 @@ The following template is taken from Boostrap portfolio template:
                 <a class="navbar-brand page-scroll" href="../welcome">
                     <img src="../img/KCL_logo.png" alt="KCL Logo" height="22" style="filter: invert(60%);">
                 </a>
-                <a class="navbar-brand" style="color:rgba(0, 0, 0, 0.7);text-transform:uppercase;letter-spacing:0.03em;font-size:16px;" href="../welcome">Museum <span style="font-size:12px;">of</span> Life Sciences</a>
+                <a class="navbar-brand" id="mls" style="color:rgba(0, 0, 0, 0.7);text-transform:uppercase;letter-spacing:0.03em;" href="../welcome">Museum <span id="of">of</span> Life Sciences</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -317,63 +322,63 @@ The following template is taken from Boostrap portfolio template:
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#zoologicalportfolio" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i>zoological</i>
                             </div>
                         </div>
-                        <img src="../img/hedgehog.jpg" class="img-responsive" alt="">
+                        <img src="../img/zoological.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#botanicalportfolio" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i>botanical</i>
                             </div>
                         </div>
-                        <img src="../img/hedgehog.jpg" class="img-responsive" alt="">
+                        <img src="../img/botanical.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#pharmaceuticalportfolio" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i>pharmaceutical</i>
                             </div>
                         </div>
-                        <img src="../img/hedgehog.jpg" class="img-responsive" alt="">
+                        <img src="../img/pharmaceutical.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#microscopicportfolio" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i>microscopic</i>
                             </div>
                         </div>
-                        <img src="../img/hedgehog.jpg" class="img-responsive" alt="">
+                        <img src="../img/microscopic.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#craniofacialportfolio" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i>craniofacial</i>
                             </div>
                         </div>
-                        <img src="../img/hedgehog.jpg" class="img-responsive" alt="">
+                        <img src="../img/craniofacial.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                  <a href="portfolioModal11" class="portfolio-link" data-toggle="modal">
+                  <a href="#otherportfolio" class="portfolio-link" data-toggle="modal">
                       <div class="caption">
                           <div class="caption-content">
                               <i>other</i>
                           </div>
                       </div>
-                      <img src="../img/hedgehog.jpg" class="img-responsive" alt="">
+                      <img src="../img/other.png" class="img-responsive" alt="">
                   </a>
                 </div>
               </div>
@@ -382,7 +387,7 @@ The following template is taken from Boostrap portfolio template:
 
 
         <!-- Portfolio Modals -->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="portfolio-modal modal fade" id="zoologicalportfolio" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
                     <div class="lr">
@@ -390,6 +395,14 @@ The following template is taken from Boostrap portfolio template:
                         </div>
                     </div>
                 </div>
+                <?php
+
+                    // Read the XML config file
+                    $specimen_type = 'zoological';
+                    $xml_config = new XMLConfig('../xml/museum.xml');
+                    $specimen_data = $xml_config->GetSpecimenDataDigest($specimen_type);
+
+                ?>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -398,8 +411,8 @@ The following template is taken from Boostrap portfolio template:
 
                                   <!-- Page Heading -->
 
-                                        <h1 class="page-header" style="color:#F23B3E;">Zoological Collection<br>
-                                            <small><small><?php echo ucwords($specimen_type); ?></small></small>
+                                        <h1 class="page-header" style="color:#F8F8F8;"><?php echo ucwords($specimen_type); ?> Collection<br>
+
                                         </h1>
 
 
@@ -415,7 +428,7 @@ The following template is taken from Boostrap portfolio template:
                                           ?>
                                               <!-- Project One/Two/Three and so on -->
                                               <div class="col-sm-4">
-                                                <div style="background:white;border-radius:4px;padding-top:18px;padding-bottom:20px;margin: 0 0px 0 0px;">
+                                                <div style="background:#fbf8f2;border-radius:4px;padding-top:7px;padding-bottom:20px;margin: 0 0px 0 0px;">
                                                 <?php
                                                         $specimen_name = $specimen['specimen_name'];
 
@@ -423,6 +436,28 @@ The following template is taken from Boostrap portfolio template:
                                                         $url = '../specimen/specimen.php?specimen_type='.$specimen_type.'&specimen_name='.$specimen_name.'&specimen_id='.$specimen_id;
                                                 ?>
                                                       <a href="<?php echo $url; ?>" id="polaroid">
+                                                        <?php
+
+
+                                                            if ($specimen['stl_description'] == '')
+                                                                $stl_icon = '';
+                                                            else
+                                                                $stl_icon = 'fa fa-dot-circle-o';
+
+                                                        ?>
+                                                        <?php
+
+
+                                                            if ($specimen['dicom_description'] == '')
+                                                                $dicom_icon = '';
+                                                            else
+                                                                $dicom_icon = 'fa fa-plus-circle';
+
+                                                        ?>
+                                                        <div class="text-right" style="padding: 0 7px 7px 7px;letter-spacing: 2px; color:rgba(0, 0, 0, 0.2);">
+                                                        &nbsp;<i class="<?php echo $stl_icon; ?>" alt"This specimen has a 3D model"></i>
+                                                        <i class="<?php echo $dicom_icon; ?>" alt"This specimen has a DICOM model"></i>
+                                                        </div>
                                                           <?php
 
 
@@ -436,7 +471,7 @@ The following template is taken from Boostrap portfolio template:
 
 
 
-                                                      <h2><?php echo $specimen['title']; ?></h2>
+                                                      <h2 style="font-size:33px;"><?php echo $specimen['title']; ?></h2>
                                                       <p><?php echo $specimen['subtitle']; ?></p>
 
                                                         </a>
@@ -453,21 +488,654 @@ The following template is taken from Boostrap portfolio template:
 
 
                             </div>
-                              <div class="col-lg-12">
+                            <div class="col-md-12 container">
+                                <br>
+                                <hr>
                             <span class="intbut" data-dismiss="modal" style=" display:inline; padding-bottom: 30px;"><a href="#a1" id="afterarrow" style="font-size:18px;" class="btnl page-scroll"><f class="fa fa-times-circle"></f> <span id="beforearrow">close&nbsp;</span></a></span>
-                            <hr>
-                            </div>
+
+
 
 
 
                               <footer>
                                   <div class="row">
                                       <div class="col-lg-12 text-center">
-                                          <p>Copyright &copy; 2016 Rashed Karim, Kawal Rhode and Tobias Whetton. All Rights Reserved.</p>
+                                          <p style="color:#F8F8F8">Copyright &copy; 2016 Rashed Karim, Kawal Rhode and Tobias Whetton. All Rights Reserved.</p>
                                       </div>
                                   </div>
                                   <!-- /.row -->
                               </footer>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="portfolio-modal modal fade" id="botanicalportfolio" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <?php
+
+                    // Read the XML config file
+                    $specimen_type = 'botanical';
+                    $xml_config = new XMLConfig('../xml/museum.xml');
+                    $specimen_data = $xml_config->GetSpecimenDataDigest($specimen_type);
+
+                ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="modal-body">
+
+
+                                  <!-- Page Heading -->
+
+                                        <h1 class="page-header" style="color:#F8F8F8;"><?php echo ucwords($specimen_type); ?> Collection<br>
+
+                                        </h1>
+
+
+                                  <!-- /.row -->
+
+                                  <?php
+
+                                      /*
+                                      *   Each specimen loaded from config XML
+                                      */
+                                      foreach ($specimen_data as $specimen_id => $specimen)
+                                      {
+                                          ?>
+                                              <!-- Project One/Two/Three and so on -->
+                                              <div class="col-sm-4">
+                                                <div style="background:#fbf8f2;border-radius:4px;padding-top:7px;padding-bottom:20px;margin: 0 0px 0 0px;">
+                                                <?php
+                                                        $specimen_name = $specimen['specimen_name'];
+
+                                                        // URL for each specimen button is constructed here
+                                                        $url = '../specimen/specimen.php?specimen_type='.$specimen_type.'&specimen_name='.$specimen_name.'&specimen_id='.$specimen_id;
+                                                ?>
+                                                      <a href="<?php echo $url; ?>" id="polaroid">
+                                                        <?php
+
+
+                                                            if ($specimen['stl_description'] == '')
+                                                                $stl_icon = '';
+                                                            else
+                                                                $stl_icon = 'fa fa-dot-circle-o';
+
+                                                        ?>
+                                                        <?php
+
+
+                                                            if ($specimen['dicom_description'] == '')
+                                                                $dicom_icon = '';
+                                                            else
+                                                                $dicom_icon = 'fa fa-plus-circle';
+
+                                                        ?>
+                                                        <div class="text-right" style="padding: 0 7px 7px 7px;letter-spacing: 2px; color:rgba(0, 0, 0, 0.2);">
+                                                        &nbsp;<i class="<?php echo $stl_icon; ?>" alt"This specimen has a 3D model"></i>
+                                                        <i class="<?php echo $dicom_icon; ?>" alt"This specimen has a DICOM model"></i>
+                                                        </div>
+                                                          <?php
+
+
+                                                              if ($specimen['image'] == '')
+                                                                  $image_url = '../img/img_placeholder_700_300.png';
+                                                              else
+                                                                  $image_url = $specimen['image'];
+
+                                                          ?>
+                                                          <img class="img-responsive" src="<?php echo $image_url; ?>" alt="" style="max-width: 100%;">
+
+
+
+                                                      <h2 style="font-size:33px;"><?php echo $specimen['title']; ?></h2>
+                                                      <p><?php echo $specimen['subtitle']; ?></p>
+
+                                                        </a>
+                                                  </div>
+                                              </div>
+
+                                          <?php
+
+                                      }       // end php foreach
+                                  ?>
+
+
+
+
+
+                            </div>
+                            <div class="col-md-12 container">
+                                <br>
+                                <hr>
+                            <span class="intbut" data-dismiss="modal" style=" display:inline; padding-bottom: 30px;"><a href="#a1" id="afterarrow" style="font-size:18px;" class="btnl page-scroll"><f class="fa fa-times-circle"></f> <span id="beforearrow">close&nbsp;</span></a></span>
+
+
+
+
+
+                              <footer>
+                                  <div class="row">
+                                      <div class="col-lg-12 text-center">
+                                          <p style="color:#F8F8F8">Copyright &copy; 2016 Rashed Karim, Kawal Rhode and Tobias Whetton. All Rights Reserved.</p>
+                                      </div>
+                                  </div>
+                                  <!-- /.row -->
+                              </footer>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="portfolio-modal modal fade" id="pharmaceuticalportfolio" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <?php
+
+                    // Read the XML config file
+                    $specimen_type = 'pharmaceutical';
+                    $xml_config = new XMLConfig('../xml/museum.xml');
+                    $specimen_data = $xml_config->GetSpecimenDataDigest($specimen_type);
+
+                ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="modal-body">
+
+
+                                  <!-- Page Heading -->
+
+                                        <h1 class="page-header" style="color:#F8F8F8;"><?php echo ucwords($specimen_type); ?> Collection<br>
+
+                                        </h1>
+
+
+                                  <!-- /.row -->
+
+                                  <?php
+
+                                      /*
+                                      *   Each specimen loaded from config XML
+                                      */
+                                      foreach ($specimen_data as $specimen_id => $specimen)
+                                      {
+                                          ?>
+                                              <!-- Project One/Two/Three and so on -->
+                                              <div class="col-sm-4">
+                                                <div style="background:#fbf8f2;border-radius:4px;padding-top:7px;padding-bottom:20px;margin: 0 0px 0 0px;">
+                                                <?php
+                                                        $specimen_name = $specimen['specimen_name'];
+
+                                                        // URL for each specimen button is constructed here
+                                                        $url = '../specimen/specimen.php?specimen_type='.$specimen_type.'&specimen_name='.$specimen_name.'&specimen_id='.$specimen_id;
+                                                ?>
+                                                      <a href="<?php echo $url; ?>" id="polaroid">
+                                                        <?php
+
+
+                                                            if ($specimen['stl_description'] == '')
+                                                                $stl_icon = '';
+                                                            else
+                                                                $stl_icon = 'fa fa-dot-circle-o';
+
+                                                        ?>
+                                                        <?php
+
+
+                                                            if ($specimen['dicom_description'] == '')
+                                                                $dicom_icon = '';
+                                                            else
+                                                                $dicom_icon = 'fa fa-plus-circle';
+
+                                                        ?>
+                                                        <div class="text-right" style="padding: 0 7px 7px 7px;letter-spacing: 2px; color:rgba(0, 0, 0, 0.2);">
+                                                        &nbsp;<i class="<?php echo $stl_icon; ?>" alt"This specimen has a 3D model"></i>
+                                                        <i class="<?php echo $dicom_icon; ?>" alt"This specimen has a DICOM model"></i>
+                                                        </div>
+                                                          <?php
+
+
+                                                              if ($specimen['image'] == '')
+                                                                  $image_url = '../img/img_placeholder_700_300.png';
+                                                              else
+                                                                  $image_url = $specimen['image'];
+
+                                                          ?>
+                                                          <img class="img-responsive" src="<?php echo $image_url; ?>" alt="" style="max-width: 100%;">
+
+
+
+                                                      <h2 style="font-size:33px;"><?php echo $specimen['title']; ?></h2>
+                                                      <p><?php echo $specimen['subtitle']; ?></p>
+
+                                                        </a>
+                                                  </div>
+                                              </div>
+
+                                          <?php
+
+                                      }       // end php foreach
+                                  ?>
+
+
+
+
+
+                            </div>
+                            <div class="col-md-12 container">
+                                <br>
+                                <hr>
+                            <span class="intbut" data-dismiss="modal" style=" display:inline; padding-bottom: 30px;"><a href="#a1" id="afterarrow" style="font-size:18px;" class="btnl page-scroll"><f class="fa fa-times-circle"></f> <span id="beforearrow">close&nbsp;</span></a></span>
+
+
+
+
+
+                              <footer>
+                                  <div class="row">
+                                      <div class="col-lg-12 text-center">
+                                          <p style="color:#F8F8F8">Copyright &copy; 2016 Rashed Karim, Kawal Rhode and Tobias Whetton. All Rights Reserved.</p>
+                                      </div>
+                                  </div>
+                                  <!-- /.row -->
+                              </footer>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-modal modal fade" id="microscopicportfolio" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <?php
+
+                    // Read the XML config file
+                    $specimen_type = 'microscopic';
+                    $xml_config = new XMLConfig('../xml/museum.xml');
+                    $specimen_data = $xml_config->GetSpecimenDataDigest($specimen_type);
+
+                ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="modal-body">
+
+
+                                  <!-- Page Heading -->
+
+                                        <h1 class="page-header" style="color:#F8F8F8;"><?php echo ucwords($specimen_type); ?> Collection<br>
+
+                                        </h1>
+
+
+                                  <!-- /.row -->
+
+                                  <?php
+
+                                      /*
+                                      *   Each specimen loaded from config XML
+                                      */
+                                      foreach ($specimen_data as $specimen_id => $specimen)
+                                      {
+                                          ?>
+                                              <!-- Project One/Two/Three and so on -->
+                                              <div class="col-sm-4">
+                                                <div style="background:#fbf8f2;border-radius:4px;padding-top:7px;padding-bottom:20px;margin: 0 0px 0 0px;">
+                                                <?php
+                                                        $specimen_name = $specimen['specimen_name'];
+
+                                                        // URL for each specimen button is constructed here
+                                                        $url = '../specimen/specimen.php?specimen_type='.$specimen_type.'&specimen_name='.$specimen_name.'&specimen_id='.$specimen_id;
+                                                ?>
+                                                      <a href="<?php echo $url; ?>" id="polaroid">
+                                                        <?php
+
+
+                                                            if ($specimen['stl_description'] == '')
+                                                                $stl_icon = '';
+                                                            else
+                                                                $stl_icon = 'fa fa-dot-circle-o';
+
+                                                        ?>
+                                                        <?php
+
+
+                                                            if ($specimen['dicom_description'] == '')
+                                                                $dicom_icon = '';
+                                                            else
+                                                                $dicom_icon = 'fa fa-plus-circle';
+
+                                                        ?>
+                                                        <div class="text-right" style="padding: 0 7px 7px 7px;letter-spacing: 2px; color:rgba(0, 0, 0, 0.2);">
+                                                        &nbsp;<i class="<?php echo $stl_icon; ?>" alt"This specimen has a 3D model"></i>
+                                                        <i class="<?php echo $dicom_icon; ?>" alt"This specimen has a DICOM model"></i>
+                                                        </div>
+                                                          <?php
+
+
+                                                              if ($specimen['image'] == '')
+                                                                  $image_url = '../img/img_placeholder_700_300.png';
+                                                              else
+                                                                  $image_url = $specimen['image'];
+
+                                                          ?>
+                                                          <img class="img-responsive" src="<?php echo $image_url; ?>" alt="" style="max-width: 100%;">
+
+
+
+                                                      <h2 style="font-size:33px;"><?php echo $specimen['title']; ?></h2>
+                                                      <p><?php echo $specimen['subtitle']; ?></p>
+
+                                                        </a>
+                                                  </div>
+                                              </div>
+
+                                          <?php
+
+                                      }       // end php foreach
+                                  ?>
+
+
+
+
+
+                            </div>
+                            <div class="col-md-12 container">
+                                <br>
+                                <hr>
+                            <span class="intbut" data-dismiss="modal" style=" display:inline; padding-bottom: 30px;"><a href="#a1" id="afterarrow" style="font-size:18px;" class="btnl page-scroll"><f class="fa fa-times-circle"></f> <span id="beforearrow">close&nbsp;</span></a></span>
+
+
+
+
+
+                              <footer>
+                                  <div class="row">
+                                      <div class="col-lg-12 text-center">
+                                          <p style="color:#F8F8F8">Copyright &copy; 2016 Rashed Karim, Kawal Rhode and Tobias Whetton. All Rights Reserved.</p>
+                                      </div>
+                                  </div>
+                                  <!-- /.row -->
+                              </footer>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-modal modal fade" id="craniofacialportfolio" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <?php
+
+                    // Read the XML config file
+                    $specimen_type = 'craniofacial';
+                    $xml_config = new XMLConfig('../xml/museum.xml');
+                    $specimen_data = $xml_config->GetSpecimenDataDigest($specimen_type);
+
+                ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="modal-body">
+
+
+                                  <!-- Page Heading -->
+
+                                        <h1 class="page-header" style="color:#F8F8F8;"><?php echo ucwords($specimen_type); ?> Collection<br>
+
+                                        </h1>
+
+
+                                  <!-- /.row -->
+
+                                  <?php
+
+                                      /*
+                                      *   Each specimen loaded from config XML
+                                      */
+                                      foreach ($specimen_data as $specimen_id => $specimen)
+                                      {
+                                          ?>
+                                              <!-- Project One/Two/Three and so on -->
+                                              <div class="col-sm-4">
+                                                <div style="background:#fbf8f2;border-radius:4px;padding-top:7px;padding-bottom:20px;margin: 0 0px 0 0px;">
+                                                <?php
+                                                        $specimen_name = $specimen['specimen_name'];
+
+                                                        // URL for each specimen button is constructed here
+                                                        $url = '../specimen/specimen.php?specimen_type='.$specimen_type.'&specimen_name='.$specimen_name.'&specimen_id='.$specimen_id;
+                                                ?>
+                                                      <a href="<?php echo $url; ?>" id="polaroid">
+                                                        <?php
+
+
+                                                            if ($specimen['stl_description'] == '')
+                                                                $stl_icon = '';
+                                                            else
+                                                                $stl_icon = 'fa fa-dot-circle-o';
+
+                                                        ?>
+                                                        <?php
+
+
+                                                            if ($specimen['dicom_description'] == '')
+                                                                $dicom_icon = '';
+                                                            else
+                                                                $dicom_icon = 'fa fa-plus-circle';
+
+                                                        ?>
+                                                        <div class="text-right" style="padding: 0 7px 7px 7px;letter-spacing: 2px; color:rgba(0, 0, 0, 0.2);">
+                                                        &nbsp;<i class="<?php echo $stl_icon; ?>" alt"This specimen has a 3D model"></i>
+                                                        <i class="<?php echo $dicom_icon; ?>" alt"This specimen has a DICOM model"></i>
+                                                        </div>
+                                                          <?php
+
+
+                                                              if ($specimen['image'] == '')
+                                                                  $image_url = '../img/img_placeholder_700_300.png';
+                                                              else
+                                                                  $image_url = $specimen['image'];
+
+                                                          ?>
+                                                          <img class="img-responsive" src="<?php echo $image_url; ?>" alt="" style="max-width: 100%;">
+
+
+
+                                                      <h2 style="font-size:33px;"><?php echo $specimen['title']; ?></h2>
+                                                      <p><?php echo $specimen['subtitle']; ?></p>
+
+                                                        </a>
+                                                  </div>
+                                              </div>
+
+                                          <?php
+
+                                      }       // end php foreach
+                                  ?>
+
+
+
+
+
+                            </div>
+                            <div class="col-md-12 container">
+                                <br>
+                                <hr>
+                            <span class="intbut" data-dismiss="modal" style=" display:inline; padding-bottom: 30px;"><a href="#a1" id="afterarrow" style="font-size:18px;" class="btnl page-scroll"><f class="fa fa-times-circle"></f> <span id="beforearrow">close&nbsp;</span></a></span>
+
+
+
+
+
+                              <footer>
+                                  <div class="row">
+                                      <div class="col-lg-12 text-center">
+                                          <p style="color:#F8F8F8">Copyright &copy; 2016 Rashed Karim, Kawal Rhode and Tobias Whetton. All Rights Reserved.</p>
+                                      </div>
+                                  </div>
+                                  <!-- /.row -->
+                              </footer>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="portfolio-modal modal fade" id="otherportfolio" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <?php
+
+                    // Read the XML config file
+                    $specimen_type = 'other';
+                    $xml_config = new XMLConfig('../xml/museum.xml');
+                    $specimen_data = $xml_config->GetSpecimenDataDigest($specimen_type);
+
+                ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="modal-body">
+
+
+                                  <!-- Page Heading -->
+
+                                        <h1 class="page-header" style="color:#F8F8F8;"><?php echo ucwords($specimen_type); ?> Collections<br>
+
+                                        </h1>
+
+
+                                  <!-- /.row -->
+
+                                  <?php
+
+                                      /*
+                                      *   Each specimen loaded from config XML
+                                      */
+                                      foreach ($specimen_data as $specimen_id => $specimen)
+                                      {
+                                          ?>
+                                              <!-- Project One/Two/Three and so on -->
+                                              <div class="col-sm-4">
+                                                <div style="background:#fbf8f2;border-radius:4px;padding-top:7px;padding-bottom:20px;margin: 0 0px 0 0px;">
+                                                <?php
+                                                        $specimen_name = $specimen['specimen_name'];
+
+                                                        // URL for each specimen button is constructed here
+                                                        $url = '../specimen/specimen.php?specimen_type='.$specimen_type.'&specimen_name='.$specimen_name.'&specimen_id='.$specimen_id;
+                                                ?>
+                                                      <a href="<?php echo $url; ?>" id="polaroid">
+                                                        <?php
+
+
+                                                            if ($specimen['stl_description'] == '')
+                                                                $stl_icon = '';
+                                                            else
+                                                                $stl_icon = 'fa fa-dot-circle-o';
+
+                                                        ?>
+                                                        <?php
+
+
+                                                            if ($specimen['dicom_description'] == '')
+                                                                $dicom_icon = '';
+                                                            else
+                                                                $dicom_icon = 'fa fa-plus-circle';
+
+                                                        ?>
+                                                        <div class="text-right" style="padding: 0 7px 7px 7px;letter-spacing: 2px; color:rgba(0, 0, 0, 0.2);">
+                                                        &nbsp;<i class="<?php echo $stl_icon; ?>" alt"This specimen has a 3D model"></i>
+                                                        <i class="<?php echo $dicom_icon; ?>" alt"This specimen has a DICOM model"></i>
+                                                        </div>
+                                                          <?php
+
+
+                                                              if ($specimen['image'] == '')
+                                                                  $image_url = '../img/img_placeholder_700_300.png';
+                                                              else
+                                                                  $image_url = $specimen['image'];
+
+                                                          ?>
+                                                          <img class="img-responsive" src="<?php echo $image_url; ?>" alt="" style="max-width: 100%;">
+
+
+
+                                                      <h2 style="font-size:33px;"><?php echo $specimen['title']; ?></h2>
+                                                      <p><?php echo $specimen['subtitle']; ?></p>
+
+                                                        </a>
+                                                  </div>
+                                              </div>
+
+                                          <?php
+
+                                      }       // end php foreach
+                                  ?>
+
+
+
+
+
+                            </div>
+                            <div class="col-md-12 container">
+                                <br>
+                                <hr>
+                            <span class="intbut" data-dismiss="modal" style=" display:inline; padding-bottom: 30px;"><a href="#a1" id="afterarrow" style="font-size:18px;" class="btnl page-scroll"><f class="fa fa-times-circle"></f> <span id="beforearrow">close&nbsp;</span></a></span>
+
+
+
+
+
+                              <footer>
+                                  <div class="row">
+                                      <div class="col-lg-12 text-center">
+                                          <p style="color:#F8F8F8">Copyright &copy; 2016 Rashed Karim, Kawal Rhode and Tobias Whetton. All Rights Reserved.</p>
+                                      </div>
+                                  </div>
+                                  <!-- /.row -->
+                              </footer>
+                              </div>
                         </div>
                     </div>
                 </div>

@@ -65,16 +65,16 @@ The following template is taken from Boostrap portfolio template:
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" id="navbar-button" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="../welcome">
-                    <img src="../img/KCL_logo.png" alt="KCL Logo" height="22">
+                  <img src="../img/KCL_logo.png" alt="KCL Logo" height="22" style="filter: invert(60%);">
                 </a>
-                <a class="navbar-brand" style="color:white;text-transform:uppercase;letter-spacing:0.03em;font-size:16px;" href="../welcome">Museum <span style="font-size:12px;">of</span> Life Sciences</a>
+              <a class="navbar-brand" id="mls" style="color:rgba(0, 0, 0, 0.7);text-transform:uppercase;letter-spacing:0.03em;" href="../welcome">Museum <span id="of">of</span> Life Sciences</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -86,7 +86,7 @@ The following template is taken from Boostrap portfolio template:
                         <a href="../events">what's on</a>
                     </li>
                     <li>
-                        <a style="color:#fff;" href="#">about</a>
+                        <a style="color:rgba(0, 0, 0, 0.7);" href="#">about</a>
                     </li>
                 </ul>
             </div>
@@ -96,15 +96,15 @@ The following template is taken from Boostrap portfolio template:
     </nav>
 
     <!-- Page Content -->
-    <div style="background:#F8F8F8;border-radius:8px;" class="container">
+    <section id="about">
+    <div style="border-radius:8px;" class="container">
 
         <!-- Page Heading -->
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">About
-
-                </h1>
-            </div>
+          <div class="col-lg-12 text-center">
+              <h2 style="color:#F23B3E">About the Museum</h2>
+              <hr class="star-primary">
+          </div>
         </div>
         <!-- /.row -->
 
@@ -152,7 +152,7 @@ The following template is taken from Boostrap portfolio template:
 
         </div>
       </div>
-
+    </section>
 
 
 
