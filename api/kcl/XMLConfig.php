@@ -230,16 +230,17 @@
             return $attrib["name"];
 
         }
+        
 
         /*
         *   Get a digest of the specimen data
         */
-        public function GetSpecimenDataDigest($specimen_group_name)
+        public function GetSpecimenDataDigest($collection_name)
         {
             $specimen_ids = array();
             $output = array();
 
-            $specimen_ids = $this->Getcollection($specimen_group_name);
+            $specimen_ids = $this->Getcollection($collection_name);
 
             if (count($specimen_ids) > 0)
             {
@@ -264,6 +265,24 @@
             }
 
             return $output;
+        }
+        
+        /*
+        *   Get a list of collection names as an array 
+        */
+        function GetAllCollections()
+        {
+            $collection_names = array();
+            
+            foreach ($this->xml_obj->collection as $collection)
+            {
+                $attrib = $collection->attributes();
+                    
+                array_push($collection_names, "".$attrib["name"]); 
+                
+            }
+            
+            return $collection_names;
         }
 
 
