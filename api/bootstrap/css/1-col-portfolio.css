@@ -6,8 +6,161 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background: #fbf8f2;
+    font-family: 'Playfair Display', serif;
+}
+
+p, ul {
+  font-family: 'Crimson Text', serif;
+  font-size:18px;
+  color:rgba(0, 0, 0, 0.7);
 }
 
 footer {
     margin: 50px 0;
+}
+
+a {
+  -webkit-transition:  .3s ease-in-out;
+  -moz-transition:  .3s ease-in-out;
+  transition:  .3s ease-in-out;
+}
+
+
+.btn {
+  background: #F23B3E;
+  border: none;
+}
+
+.btn:hover {
+  background: #d13538;
+}
+
+.navbar {
+  background: #fbf8f2;
+  border-bottom: none;
+}
+
+.nav.navbar-nav li a {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.nav.navbar-nav li a:hover,
+.nav.navbar-nav li a:active {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar .navbar-header .navbar-toggle {
+  border:none;
+  background: none;
+  color:rgba(0, 0, 0, 0.5);
+  padding: 10px 0px 10px 5px;
+}
+
+.navbar .navbar-header .navbar-toggle:hover,
+.navbar .navbar-header .navbar-toggle:active {
+  color:rgba(0, 0, 0, 0.7);
+}
+
+
+.pagination>li>a,
+.pagination>li>span {
+  border: 1px solid #F23B3E;
+  background: #F23B3E;
+  color: #F8F8F8;
+}
+
+.pagination>li>a:hover,
+.pagination>li>span:hover {
+  border: 1px solid #d13538;
+  background: #d13538;
+  color: #F8F8F8;
+}
+
+.pagination>li.active>a {
+  background: #d13538;
+  color: #fff;
+  border: 1px solid #d13538;
+}
+
+.pagination>li.active>a:hover {
+  background: #d13538;
+  border: 1px solid #d13538;
+}
+
+footer p{
+  color: rgba(0, 0, 0, 0.2);
+  font-size:12px;
+}
+
+.btnl {
+  font-family: 'Crimson Text', serif;
+  font-weight: normal;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.2);
+  -webkit-transition:  .4s ease-in-out;
+  -moz-transition:  .4s ease-in-out;
+  transition:  .4s ease-in-out;
+  font-size: 18px;
+  border-radius:20px;
+  padding: 0 0 0 0;
+}
+
+.intbut .btnl:hover,
+.intbut .btnl:focus {
+  padding: 2px 8px 7px 8px;
+  text-decoration: none;
+}
+
+.intbut .btnl {
+  padding: 0px 3px 5px 3px;
+}
+
+
+.intbut .btnl:hover,
+.intbut .btnl:focus {
+  background: #F23B3E;
+  color: #F8F8F8;
+}
+
+.intbut .btnl {
+  background: rgba(0, 0, 0, 0);
+  color: #F23B3E;
+}
+
+#beforearrow {
+  display:none;
+}
+
+#afterarrow:hover > #beforearrow,
+#afterarrow:focus > #beforearrow {
+  display: inline;
+}
+
+section {
+    padding: 100px 0;
+}
+
+section h2 {
+    margin: 0;
+    font-size: 3em;
+}
+
+#mls {
+  font-size:16px;
+}
+
+#of {
+  font-size:12px;
+}
+
+@media only screen and (max-width: 767px) {
+  #mls {
+    font-size:14px;
+  }
+
+  #of {
+    font-size:10px;
+  }
+
 }
