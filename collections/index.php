@@ -324,15 +324,15 @@ The following template is taken from Boostrap portfolio template:
                 <?php
 
                     // Read the XML config file
-                    
+
                     //$collection_name = 'zoological';
                     $xml_config = new XMLConfig('../xml/museum.xml');
-                    
-                    // Get a list of all collections 
-                    $collections = $xml_config->GetAllCollections(); 
+
+                    // Get a list of all collections
+                    $collections = $xml_config->GetAllCollections();
                     error_log(print_r($collections, true));
-                    
-                    
+
+
                     foreach ($collections as $collection_name)
                     {
                         //error_log("Collection = ".$collection_name);
@@ -349,17 +349,17 @@ The following template is taken from Boostrap portfolio template:
                             <img src="../img/<?php echo $collection_name; ?>.png" class="img-responsive" alt="">
                         </a>
                     </div>
-                <?php 
-                    } 
+                <?php
+                    }
                 ?>
-                
+
               </div>
         </div>
     </section>
 
     <?php
 
-                
+
                 foreach ($collections as $collection_name)
                 {
                     //error_log("Collection = ".$collection_name);
@@ -375,7 +375,7 @@ The following template is taken from Boostrap portfolio template:
                         </div>
                     </div>
                 </div>
-                
+
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -466,7 +466,7 @@ The following template is taken from Boostrap portfolio template:
                                         <hr>
                                     <span class="intbut" data-dismiss="modal" style=" display:inline; padding-bottom: 30px;"><a href="#a1" id="afterarrow" style="font-size:18px;" class="btnl page-scroll"><f class="fa fa-times-circle"></f> <span id="beforearrow">close&nbsp;</span></a></span>
 
-                         
+
 
 
                               <footer>
@@ -483,13 +483,23 @@ The following template is taken from Boostrap portfolio template:
                 </div>
             </div>
         </div>
-    <?php 
-                                    
+    <?php
+
             }  // end foreach iterating over collections
-            
+
     ?>
 
 
+            <hr>
+
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <p>Copyright &copy; 2016 Rashed Karim, Kawal Rhode and Tobias Whetton. All Rights Reserved.</p>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </footer>
 
     </div>
     <!-- /.container -->
