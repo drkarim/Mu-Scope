@@ -321,80 +321,6 @@ The following template is taken from Boostrap portfolio template:
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#zoologicalportfolio" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i>zoological</i>
-                            </div>
-                        </div>
-                        <img src="../img/zoological.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#botanicalportfolio" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i>botanical</i>
-                            </div>
-                        </div>
-                        <img src="../img/botanical.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#pharmaceuticalportfolio" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i>pharmaceutical</i>
-                            </div>
-                        </div>
-                        <img src="../img/pharmaceutical.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#microscopicportfolio" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i>microscopic</i>
-                            </div>
-                        </div>
-                        <img src="../img/microscopic.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#craniofacialportfolio" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i>craniofacial</i>
-                            </div>
-                        </div>
-                        <img src="../img/craniofacial.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                  <a href="#otherportfolio" class="portfolio-link" data-toggle="modal">
-                      <div class="caption">
-                          <div class="caption-content">
-                              <i>other</i>
-                          </div>
-                      </div>
-                      <img src="../img/other.png" class="img-responsive" alt="">
-                  </a>
-                </div>
-              </div>
-        </div>
-    </section>
-
-
-        <!-- Portfolio Modals -->
-        <div class="portfolio-modal modal fade" id="zoologicalportfolio" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
                 <?php
 
                     // Read the XML config file
@@ -404,15 +330,52 @@ The following template is taken from Boostrap portfolio template:
                     
                     // Get a list of all collections 
                     $collections = $xml_config->GetAllCollections(); 
-                    //error_log(print_r($collections, true));
+                    error_log(print_r($collections, true));
                     
                     
                     foreach ($collections as $collection_name)
                     {
-                        error_log("Collection = ".$collection_name);
+                        //error_log("Collection = ".$collection_name);
                         $specimen_data = $xml_config->GetSpecimenDataDigest($collection_name);
 
                 ?>
+                    <div class="col-sm-4 portfolio-item">
+                        <a href="#<?php echo $collection_name; ?>portfolio" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i><?php echo $collection_name; ?></i>
+                                </div>
+                            </div>
+                            <img src="../img/<?php echo $collection_name; ?>.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                <?php 
+                    } 
+                ?>
+                
+              </div>
+        </div>
+    </section>
+
+    <?php
+
+                
+                foreach ($collections as $collection_name)
+                {
+                    //error_log("Collection = ".$collection_name);
+                    $specimen_data = $xml_config->GetSpecimenDataDigest($collection_name);
+
+                ?>
+        <!-- Portfolio Modals -->
+        <div class="portfolio-modal modal fade" id="<?php echo $collection_name; ?>portfolio" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -503,12 +466,7 @@ The following template is taken from Boostrap portfolio template:
                                         <hr>
                                     <span class="intbut" data-dismiss="modal" style=" display:inline; padding-bottom: 30px;"><a href="#a1" id="afterarrow" style="font-size:18px;" class="btnl page-scroll"><f class="fa fa-times-circle"></f> <span id="beforearrow">close&nbsp;</span></a></span>
 
-                             <?php 
-                                    
-                                    }  // end foreach iterating over collections
-                                     
-                             ?>
-
+                         
 
 
                               <footer>
@@ -525,6 +483,11 @@ The following template is taken from Boostrap portfolio template:
                 </div>
             </div>
         </div>
+    <?php 
+                                    
+            }  // end foreach iterating over collections
+            
+    ?>
 
 
 
