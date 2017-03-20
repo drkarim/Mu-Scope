@@ -1,6 +1,10 @@
 # Mu-Scope
 **Museum-Scope** <em>A web interface, to interact and learn about digitised specimens from the Museum of Life Sciences, using Unity Web Player and the open-source DWV viewer.</em>
 
+## INSTRUCTIONS ## 
+To add a new collection (March 2017): 
+- Add the collection's XML file under ```XML``` folder. This file should be called with exactly the same name as the collection. 
+- Edit the index.php file to include the new collection name
 
 ##### THE **BIG RED** UPDATE <small>[Release 1.0]</small>
 This update includes:
